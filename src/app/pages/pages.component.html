@@ -1,0 +1,25 @@
+<div class="demo-box">
+  <div class="demo-box-example">
+    <table class="table custom-table">
+      <caption class="sr-only">
+        Nombre de la tabla
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Launch number</th>
+          <th scope="col">Mission name</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let launch of launches">
+          <td data-title="Nombre completo">{{ launch.flight_number }}</td>
+          <td data-title="Nombre completo">{{ launch.mission_name }}</td>
+          <td data-title="Nombre completo">
+              <a [routerLink]="['/launches/detail', launch.flight_number, launch.rocket.rocket_id]">Go to detail</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
